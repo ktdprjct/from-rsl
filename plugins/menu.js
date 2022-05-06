@@ -9,11 +9,34 @@ let fetch = require('node-fetch')
 let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
-          before: `Info Penggunaan Bot:\n*${lim} : Memakai Limit*\n*${prem} : Khusus Premium*\n${ucpn}%readmore`.trimStart(),
-  header: `${sa}${kki} ${zt}%category${zt} ${kka}`,
-  body: `${gy} ${zc}%cmd${zc} %islimit %isPremium`,
-  footer: `${sb}\n`,
-          after: ``,
+  before: `╭━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
+├───❑「 %me 」❑───
+│
+│✾ Hai, Kak %name!
+│✾ Version: %version
+│✾ Library: Baileys
+│✾ Runtime: %uptime
+│✾ Database: %rtotalreg of %totalreg
+╰┬────────────┈ ⳹
+┌┤◦➛ *Nama* : %name
+││◦➛ *Role* :  %role
+││◦➛ *Level* : %level
+││◦➛ *Exp* : %totalexp
+││◦➛ *Limit* : %limit
+││◦➛ *Money* : Rp.%money
+│╰────────────┈ ⳹
+├───❑「 ᴛʏ ᴛᴏ 」❑───
+│
+│  ↓ Nurutomo ↓
+│https://github.com/Nurutomo
+│  ↓ rthelolchex ↓
+│https://github.com/rthelolchex
+╰━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
+%readmore`.trimStart(),
+  header: "╭───❑「 %category 」❑───\n│",
+  body: `│◦➛ %cmd %islimit %isPremium`,
+  footer: '╰────────────┈ ⳹\n',
+  after: ``,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
