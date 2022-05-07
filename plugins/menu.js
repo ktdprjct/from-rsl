@@ -25,12 +25,6 @@ const defaultMenu = {
 ││◦➛ *Limit* : %limit
 ││◦➛ *Money* : Rp.%money
 │╰────────────┈ ⳹
-├───❑「 ᴛʏ ᴛᴏ 」❑───
-│
-│  ↓ Nurutomo ↓
-│https://github.com/Nurutomo
-│  ↓ rthelolchex ↓
-│https://github.com/rthelolchex
 ╰━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
 %readmore`.trimStart(),
   header: "╭───❑「 %category 」❑───\n│",
@@ -178,7 +172,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
 
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
+    let { exp, limit, money, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = await registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -210,6 +204,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
+    let totalreg = Object.keys(global.db.data.users).length
+    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
     
@@ -481,13 +477,17 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
       '%': '%',
       p: _p, uptime, muptime,
       me: conn.user.name,
+      exp: exp - min,
+      maxexp: xp,
+      totalexp: exp,
+      xp4levelup: max - exp,
       npmname: package.name,
       npmdesc: package.description,
       version: package.version,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
       name,
       ucapan: ucapan(),
-      name, weton, week, date, dateIslamic, time,
+      level, limit, money, name, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
