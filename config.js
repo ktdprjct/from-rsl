@@ -102,7 +102,7 @@ global.bodlink = ''
 
 //========= Url Template Button =========//
 global.dtu = 'Group Bot WhatsApp'
-global.urlnya = 'https://chat.whatsapp.com/Jd3lmRL399k1KxARFmdLZO'
+global.urlnya = 'https://chat.whatsapp.com/BO7vTZIb2ZDCWKJ3oMmc0N'
 
 //========= Call Template Button =========//
 global.dtc = 'Add Me'
