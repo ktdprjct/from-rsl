@@ -21,10 +21,11 @@ Irwan:
 https://github.com/irwanx
 Rasel:
 https://github.com/raselcomel
+rthelolchex:
+https://github.com/rthelolchex
 
-\`\`\`${conn.user.name}\`\`\`
 `
- conn.sendTBL(m.chat, tqto, wm, 'https://avatars.githubusercontent.com/u/18616827?v=4', `Source Code Bot ✨`, `https://github.com/raselcomel/lucubot-md`, null, null, 'Menu', `${usedPrefix}menu`, null, null, null, null, m) 
+ conn.sendTBL(m.chat, tqto, wm, 'https://avatars.githubusercontent.com/u/18616827?v=4', `Group`, linkgc, null, null, 'Menu', `${usedPrefix}menu`, null, null, null, null, m) 
 }
 handler.help = ['tqto']
 handler.tags = ['info']
