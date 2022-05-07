@@ -19,7 +19,7 @@ global.owner = ['62895342581896', '6285171612950', '6285877650700', '62812138123
 global.mods = []
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Premium user has unlimited limit 
 
-global.repox = 'ktdprjct/from-rasel'
+global.repox = 'ktdprjct/from-rsl'
 global.branx = 'master'
 
 global.APIs = { // API Prefix
