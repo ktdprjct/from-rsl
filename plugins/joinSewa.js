@@ -54,9 +54,9 @@ Untuk menggunakan *${conn.user.name}* silahkan ketik
       throw `Maaf bot tidak bisa bergabung ke grup!`
       }
 }
-handler.help = ['joins <chat.whatsapp.com> <day>']
+handler.help = ['join <chat.whatsapp.com> <day>']
 handler.tags = ['owner']
-handler.command = /^joins(ewa)?$/i
+handler.command = /^join?$/i
 
 handler.owner = true
 
